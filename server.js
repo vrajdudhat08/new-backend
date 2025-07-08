@@ -23,6 +23,11 @@ app.get('/', (req, res) => {
 });
 
 
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://your-frontend.vercel.app'],
+  credentials: true
+}));
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
